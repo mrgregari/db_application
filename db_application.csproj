@@ -98,17 +98,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEm.Designer.cs">
+      <DependentUpon>AddEm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appl.Designer.cs">
+      <DependentUpon>Appl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="client.Designer.cs">
+      <DependentUpon>client.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ER.Designer.cs">
+      <DependentUpon>ER.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Participants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Participants.Designer.cs">
+      <DependentUpon>Participants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plans.Designer.cs">
+      <DependentUpon>Plans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Post.Designer.cs">
+      <DependentUpon>Post.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,11 +160,56 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resr.Designer.cs">
+      <DependentUpon>Resr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SR.Designer.cs">
+      <DependentUpon>SR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stand.Designer.cs">
+      <DependentUpon>Stand.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddEm.resx">
+      <DependentUpon>AddEm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appl.resx">
+      <DependentUpon>Appl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="client.resx">
+      <DependentUpon>client.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ER.resx">
+      <DependentUpon>ER.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Participants.resx">
+      <DependentUpon>Participants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plans.resx">
+      <DependentUpon>Plans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Post.resx">
+      <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +222,18 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resr.resx">
+      <DependentUpon>Resr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SR.resx">
+      <DependentUpon>SR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stand.resx">
+      <DependentUpon>Stand.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

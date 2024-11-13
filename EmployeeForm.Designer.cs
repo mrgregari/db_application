@@ -33,19 +33,13 @@
             this.connectionLabel = new System.Windows.Forms.Label();
             this.tablesListBox = new System.Windows.Forms.ListBox();
             this.insertButton = new System.Windows.Forms.Button();
-            this.insertTextBox = new System.Windows.Forms.TextBox();
             this.refreshButton = new System.Windows.Forms.Button();
-            this.whereTextBox = new System.Windows.Forms.TextBox();
             this.whereButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.topicTextBox = new System.Windows.Forms.TextBox();
             this.yearTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.searchApplicationButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.selfTB = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.selfButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.functionTB = new System.Windows.Forms.TextBox();
@@ -59,16 +53,24 @@
             this.label12 = new System.Windows.Forms.Label();
             this.upsertEmployeeButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.selfTB = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.whereTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // employeesDataGridView
             // 
+            this.employeesDataGridView.AllowUserToAddRows = false;
             this.employeesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.employeesDataGridView.BackgroundColor = System.Drawing.Color.LightSlateGray;
             this.employeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeesDataGridView.Location = new System.Drawing.Point(360, 51);
+            this.employeesDataGridView.Location = new System.Drawing.Point(410, 51);
             this.employeesDataGridView.Name = "employeesDataGridView";
+            this.employeesDataGridView.ReadOnly = true;
             this.employeesDataGridView.RowHeadersWidth = 51;
             this.employeesDataGridView.Size = new System.Drawing.Size(856, 443);
             this.employeesDataGridView.TabIndex = 0;
@@ -78,7 +80,7 @@
             // 
             this.connectionLabel.AutoSize = true;
             this.connectionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.connectionLabel.Location = new System.Drawing.Point(373, 16);
+            this.connectionLabel.Location = new System.Drawing.Point(406, 16);
             this.connectionLabel.Name = "connectionLabel";
             this.connectionLabel.Size = new System.Drawing.Size(58, 22);
             this.connectionLabel.TabIndex = 1;
@@ -99,9 +101,9 @@
             "Стандарты",
             "Планы исследований",
             "Исследования",
-            "Работники, исследования",
+            "Сотрудники, исследования",
             "Стандарты, исследования"});
-            this.tablesListBox.Location = new System.Drawing.Point(13, 51);
+            this.tablesListBox.Location = new System.Drawing.Point(15, 91);
             this.tablesListBox.Name = "tablesListBox";
             this.tablesListBox.Size = new System.Drawing.Size(327, 180);
             this.tablesListBox.TabIndex = 2;
@@ -109,25 +111,18 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(12, 293);
+            this.insertButton.Location = new System.Drawing.Point(14, 277);
             this.insertButton.Name = "insertButton";
-            this.insertButton.Size = new System.Drawing.Size(328, 25);
+            this.insertButton.Size = new System.Drawing.Size(328, 47);
             this.insertButton.TabIndex = 4;
-            this.insertButton.Text = "Добавить";
+            this.insertButton.Text = "Добавить элемент в таблицу";
             this.insertButton.UseVisualStyleBackColor = true;
             this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
-            // 
-            // insertTextBox
-            // 
-            this.insertTextBox.Location = new System.Drawing.Point(12, 265);
-            this.insertTextBox.Name = "insertTextBox";
-            this.insertTextBox.Size = new System.Drawing.Size(328, 22);
-            this.insertTextBox.TabIndex = 5;
             // 
             // refreshButton
             // 
             this.refreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.BackgroundImage")));
-            this.refreshButton.Location = new System.Drawing.Point(1170, 9);
+            this.refreshButton.Location = new System.Drawing.Point(1220, 9);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(46, 40);
             this.refreshButton.TabIndex = 6;
@@ -135,44 +130,26 @@
             this.refreshButton.UseVisualStyleBackColor = true;
             this.refreshButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // whereTextBox
-            // 
-            this.whereTextBox.Location = new System.Drawing.Point(12, 349);
-            this.whereTextBox.Multiline = true;
-            this.whereTextBox.Name = "whereTextBox";
-            this.whereTextBox.Size = new System.Drawing.Size(328, 42);
-            this.whereTextBox.TabIndex = 8;
-            // 
             // whereButton
             // 
-            this.whereButton.Location = new System.Drawing.Point(12, 397);
+            this.whereButton.Location = new System.Drawing.Point(14, 379);
             this.whereButton.Name = "whereButton";
-            this.whereButton.Size = new System.Drawing.Size(328, 23);
+            this.whereButton.Size = new System.Drawing.Size(328, 41);
             this.whereButton.TabIndex = 9;
-            this.whereButton.Text = "Искать с помощью WHERE";
+            this.whereButton.Text = "Искать элемент в таблице\r\n";
             this.whereButton.UseVisualStyleBackColor = true;
             this.whereButton.Click += new System.EventHandler(this.whereButton_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 330);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 16);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Текст для поиска с помощью WHERE";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
             // topicTextBox
             // 
-            this.topicTextBox.Location = new System.Drawing.Point(12, 440);
+            this.topicTextBox.Location = new System.Drawing.Point(16, 450);
             this.topicTextBox.Name = "topicTextBox";
             this.topicTextBox.Size = new System.Drawing.Size(203, 22);
             this.topicTextBox.TabIndex = 11;
             // 
             // yearTextBox
             // 
-            this.yearTextBox.Location = new System.Drawing.Point(263, 440);
+            this.yearTextBox.Location = new System.Drawing.Point(263, 450);
             this.yearTextBox.Name = "yearTextBox";
             this.yearTextBox.Size = new System.Drawing.Size(77, 22);
             this.yearTextBox.TabIndex = 12;
@@ -180,7 +157,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(258, 423);
+            this.label4.Location = new System.Drawing.Point(258, 431);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 16);
             this.label4.TabIndex = 13;
@@ -189,7 +166,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 423);
+            this.label5.Location = new System.Drawing.Point(11, 431);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(206, 16);
             this.label5.TabIndex = 14;
@@ -197,7 +174,7 @@
             // 
             // searchApplicationButton
             // 
-            this.searchApplicationButton.Location = new System.Drawing.Point(12, 468);
+            this.searchApplicationButton.Location = new System.Drawing.Point(16, 478);
             this.searchApplicationButton.Name = "searchApplicationButton";
             this.searchApplicationButton.Size = new System.Drawing.Size(328, 26);
             this.searchApplicationButton.TabIndex = 15;
@@ -205,36 +182,9 @@
             this.searchApplicationButton.UseVisualStyleBackColor = true;
             this.searchApplicationButton.Click += new System.EventHandler(this.searchApplicationButton_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 246);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(295, 16);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Введите параметры строки для добавления\r\n";
-            // 
-            // selfTB
-            // 
-            this.selfTB.Location = new System.Drawing.Point(360, 505);
-            this.selfTB.Name = "selfTB";
-            this.selfTB.Size = new System.Drawing.Size(688, 22);
-            this.selfTB.TabIndex = 17;
-            this.selfTB.TextChanged += new System.EventHandler(this.selfTB_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(91, 508);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(165, 16);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Ввести запрос вручную";
-            // 
             // selfButton
             // 
-            this.selfButton.Location = new System.Drawing.Point(1068, 500);
+            this.selfButton.Location = new System.Drawing.Point(1109, 500);
             this.selfButton.Name = "selfButton";
             this.selfButton.Size = new System.Drawing.Size(148, 32);
             this.selfButton.TabIndex = 19;
@@ -254,14 +204,14 @@
             // 
             // functionTB
             // 
-            this.functionTB.Location = new System.Drawing.Point(697, 544);
+            this.functionTB.Location = new System.Drawing.Point(721, 544);
             this.functionTB.Name = "functionTB";
             this.functionTB.Size = new System.Drawing.Size(180, 22);
             this.functionTB.TabIndex = 21;
             // 
             // functionButton
             // 
-            this.functionButton.Location = new System.Drawing.Point(910, 542);
+            this.functionButton.Location = new System.Drawing.Point(951, 542);
             this.functionButton.Name = "functionButton";
             this.functionButton.Size = new System.Drawing.Size(306, 27);
             this.functionButton.TabIndex = 22;
@@ -342,18 +292,80 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(11, 16);
+            this.label2.Location = new System.Drawing.Point(12, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(319, 22);
             this.label2.TabIndex = 31;
             this.label2.Text = "Выберите таблицу для отображения";
+            // 
+            // selfTB
+            // 
+            this.selfTB.Location = new System.Drawing.Point(410, 505);
+            this.selfTB.Name = "selfTB";
+            this.selfTB.Size = new System.Drawing.Size(688, 22);
+            this.selfTB.TabIndex = 17;
+            this.selfTB.TextChanged += new System.EventHandler(this.selfTB_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(82, 516);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(165, 16);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Ввести запрос вручную";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(16, 29);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(145, 20);
+            this.radioButton1.TabIndex = 32;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Режим просмотра";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(185, 29);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(146, 20);
+            this.radioButton2.TabIndex = 33;
+            this.radioButton2.Text = "Режим изменения";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 327);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 16);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Введите имя сотрдуника";
+            // 
+            // whereTextBox
+            // 
+            this.whereTextBox.Location = new System.Drawing.Point(14, 351);
+            this.whereTextBox.Name = "whereTextBox";
+            this.whereTextBox.Size = new System.Drawing.Size(324, 22);
+            this.whereTextBox.TabIndex = 35;
+            this.whereTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1251, 653);
+            this.ClientSize = new System.Drawing.Size(1303, 671);
+            this.Controls.Add(this.whereTextBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.upsertEmployeeButton);
             this.Controls.Add(this.label12);
@@ -369,17 +381,13 @@
             this.Controls.Add(this.selfButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.selfTB);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.searchApplicationButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.yearTextBox);
             this.Controls.Add(this.topicTextBox);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.whereButton);
-            this.Controls.Add(this.whereTextBox);
             this.Controls.Add(this.refreshButton);
-            this.Controls.Add(this.insertTextBox);
             this.Controls.Add(this.insertButton);
             this.Controls.Add(this.tablesListBox);
             this.Controls.Add(this.connectionLabel);
@@ -399,19 +407,13 @@
         private System.Windows.Forms.Label connectionLabel;
         private System.Windows.Forms.ListBox tablesListBox;
         private System.Windows.Forms.Button insertButton;
-        private System.Windows.Forms.TextBox insertTextBox;
         private System.Windows.Forms.Button refreshButton;
-        private System.Windows.Forms.TextBox whereTextBox;
         private System.Windows.Forms.Button whereButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox topicTextBox;
         private System.Windows.Forms.TextBox yearTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button searchApplicationButton;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox selfTB;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button selfButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox functionTB;
@@ -425,5 +427,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button upsertEmployeeButton;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox selfTB;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox whereTextBox;
     }
 }

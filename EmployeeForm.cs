@@ -16,7 +16,7 @@ namespace db_application
 {
     public partial class EmployeeForm : Form
     {
-        string[] tableNames = new string[]
+        string[] tableOldNames = new string[]
         {
             "Employee",
             "application",
@@ -30,12 +30,27 @@ namespace db_application
             "employee_research",
             "standarts_research"
         };
+        string[] tableNames = new string[]
+        {
+            "sociological_research_db.view_employee_with_post",
+            "sociological_research_db.view_application_with_client",
+            "sociological_research_db.view_client",
+            "sociological_research_db.view_participants",
+            "sociological_research_db.view_posts",
+            "sociological_research_db.view_reports_with_research_description",
+            "sociological_research_db.view_standarts",
+            "sociological_research_db.view_plans_with_research_description",
+            "sociological_research_db.view_sociological_research_with_topic_and_participants_list",
+            "sociological_research_db.view_research_employee",
+            "sociological_research_db.view_research_standarts"
+        };
 
         MySqlConnection connection;
         MySqlDataAdapter adapter;
         DataSet ds;
         string currentTable;
         private int userRoleId;
+
         public EmployeeForm(int roleid)
         {
             
@@ -95,7 +110,7 @@ namespace db_application
             else
             {
                 DataGridViewRow changedRow = e.Row;
-                label2.Text = e.Row.ToString();
+                //label2.Text = e.Row.ToString();
                 string primaryKey = GetPrimaryKeyNames(currentTable)[0];
                 string id = changedRow.Cells[primaryKey].Value.ToString();
 
@@ -155,7 +170,7 @@ namespace db_application
                         st1 = GetPrimaryKeyNames(currentTable)[0] + " = " + value1;
                     }
 
-                    label2.Text = st1;
+                    //label2.Text = st1;
                     UpdateRow2keys(currentTable, st1, changedColumnName, newValue);
                 }
 
@@ -267,8 +282,60 @@ namespace db_application
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentTable = tableNames[tablesListBox.SelectedIndex];
-            PrintTable(tableNames[tablesListBox.SelectedIndex]);
+            if (radioButton2.Checked)
+            {
+                employeesDataGridView.AllowUserToDeleteRows = true;
+                employeesDataGridView.ReadOnly = false;
+                currentTable = tableOldNames[tablesListBox.SelectedIndex];
+                PrintTable(tableOldNames[tablesListBox.SelectedIndex]);
+
+            }
+            else
+            {
+                employeesDataGridView.AllowUserToDeleteRows = false;
+                employeesDataGridView.ReadOnly = true;
+                currentTable = tableNames[tablesListBox.SelectedIndex];
+                PrintTable(tableNames[tablesListBox.SelectedIndex]);
+            }
+
+            switch (tablesListBox.SelectedIndex)
+            {
+                case 0:
+                    label1.Text = "Введите имя сотрудника";
+                    break;
+                case 1:
+                    label1.Text = "Введите название компании клиента";
+                    break;
+                case 2:
+                    label1.Text = "Введите название компании клиента";
+                    break;
+                case 3:
+                    label1.Text = "Введите имя участника";
+                    break;
+                case 4:
+                    label1.Text = "Введите название должности";
+                    break;
+                case 5:
+                    label1.Text = "Введите год отчета";
+                    break;
+                case 6:
+                    label1.Text = "Введите год, до которого действует стандарт";
+                    break;
+                case 7:
+                    label1.Text = "Введите этап исследования";
+                    break;
+                case 8:
+                    label1.Text = "Введите результат исследования";
+                    break;
+                case 9:
+                    label1.Text = "Введите название исследования";
+                    break;
+                case 10:
+                    label1.Text = "Введите название стандарта";
+                    break;
+
+            }
+
         }
 
         public bool PrintTable(string tablename)
@@ -282,8 +349,6 @@ namespace db_application
                 adapter.Fill(ds, tablename);
                 currentTable = tablename;
                 employeesDataGridView.DataSource = ds.Tables[tablename];
-                employeesDataGridView.ReadOnly = false;
-                employeesDataGridView.AllowUserToAddRows = false;
                 //label2.Text = GetPrimaryKeyNames(currentTable)[0];
                 return true;
             }
@@ -363,7 +428,7 @@ namespace db_application
             return resultTable; // Возвращаем результаты поиска
         }
 
-
+        /*
         public bool InsertRow(string table, string values)
         {
             try
@@ -385,6 +450,7 @@ namespace db_application
             }
             return false;
         }
+        */
 
         private void insertButton_Click(object sender, EventArgs e)
         {
@@ -395,7 +461,55 @@ namespace db_application
             }
             else
             {
-                InsertRow(currentTable, insertTextBox.Text);
+                //InsertRow(currentTable, insertTextBox.Text);
+                switch (tablesListBox.SelectedIndex)
+                {
+                    case 0:
+                        AddEm addEm = new AddEm();
+                        addEm.Show();
+                        break;
+                    case 1:
+                        Appl appl = new Appl();
+                        appl.Show();
+                        break;
+                    case 2:
+                        client client = new client();
+                        client.Show();
+                        break;
+                    case 3:
+                        Participants part = new Participants();
+                        part.Show();
+                        break;
+                    case 4:
+                        Post post = new Post();
+                        post.Show();
+                        break;
+                    case 5:
+                        Report rep = new Report();
+                        rep.Show();
+                        break;
+                    case 6:
+                        Stand stand = new Stand();
+                        stand.Show();
+                        break;
+                    case 7:
+                        Plans plans = new Plans();
+                        plans.Show();
+                        break;
+                    case 8:
+                        Resr res = new Resr();
+                        res.Show();
+                        break;
+                    case 9:
+                        ER er = new ER();
+                        er.Show();
+                        break;
+                    case 10:
+                        SR sr = new SR();
+                        sr.Show();
+                        break;
+                }
+
             }
             
         }
@@ -414,14 +528,62 @@ namespace db_application
             string tableName = currentTable;
             string whereClause = whereTextBox.Text;
 
-            // Выполняем поиск
-            DataTable searchResults = SearchRow(tableName, whereClause);
-
-            // Если результаты не пустые, привязываем их к DataGridView
-            if (searchResults != null && searchResults.Rows.Count > 0)
+            switch (tablesListBox.SelectedIndex)
             {
-                employeesDataGridView.DataSource = searchResults;
+                case 0:
+                    whereClause = "`Employee Name` like '%" + whereClause + "%'";
+                    //label1.Text = whereClause;
+                    break;
+                case 1:
+                    whereClause = "`Client Name` like '%" + whereClause + "%'";
+                    break;
+                case 2:
+                    whereClause = "`Client Name` like '%" + whereClause + "%'";
+                    break;
+                case 3:
+                    whereClause = "`Participants List` like '%" + whereClause + "%'";
+                    break;
+                case 4:
+                    whereClause = "`Post Title` like '%" + whereClause + "%'";
+                    break;
+                case 5:
+                    whereClause = "`Report Date` like '__.__." + whereClause + "'";
+                    break;
+                case 6:
+                    whereClause = "`Validity Period` like '__.__." + whereClause + "'";
+                    break;
+                case 7:
+                    whereClause = "`Stage` like '%" + whereClause + "%'";
+                    break;
+                case 8:
+                    whereClause = "`Research Result` like '%" + whereClause + "%'";
+                    break;
+                case 9:
+                    whereClause = "`Research Description` like '%" + whereClause + "%'";
+                    break;
+                case 10:
+                    whereClause = "`Standart Requirements` like '%" + whereClause + "%'";
+                    break;
             }
+
+            
+
+            // Выполняем поиск
+            if (radioButton2.Checked)
+            {
+                MessageBox.Show("Недоступно в режиме изменения");
+            }
+            else
+            {
+                DataTable searchResults = SearchRow(tableName, whereClause);
+
+                // Если результаты не пустые, привязываем их к DataGridView
+                if (searchResults != null && searchResults.Rows.Count > 0)
+                {
+                    employeesDataGridView.DataSource = searchResults;
+                }
+            }
+            
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -629,6 +791,16 @@ namespace db_application
                 }
             }
             
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
